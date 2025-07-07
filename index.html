@@ -1,10 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First GitHub Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Cool Site</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #ffffff;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      background-color: #ffffff;
+      color: #333;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .hidden-message {
+      margin-top: 25px;
+      font-size: 1.2rem;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 1s ease, max-height 1s ease;
+    }
+
+    .hidden-message.show {
+      opacity: 1;
+      max-height: 200px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello from GitHub Pages!</h1>
-  <p>This site is live on the internet 🚀</p>
+  <div class="container">
+    <h1>Welcome to My Awesome Website!</h1>
+    <button id="revealBtn">Click to Reveal Something Cool</button>
+    <div class="hidden-message" id="hiddenMessage">
+      🌟 Surprise! You just unlocked this secret message with style. Keep building!
+    </div>
+  </div>
+
+  <script>
+    const button = document.getElementById("revealBtn");
+    const message = document.getElementById("hiddenMessage");
+
+    button.addEventListener("click", () => {
+      message.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
